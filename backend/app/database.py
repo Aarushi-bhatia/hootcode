@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-from app.config import settings
+from .config import settings
 
 uri = f"mongodb+srv://{settings.DB_USERNAME}:{settings.DB_PASSWORD}@hootcode.xbtkj.mongodb.net/?retryWrites=true&w=majority&appName=HootCode"
 
