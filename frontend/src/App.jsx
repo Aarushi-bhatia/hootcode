@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/practice/twosum" element={<Practice />} />{" "}
+          <Route path="/practice" element={<Practice />} />{" "}
           <Route path="/roadmap" element={<RoadMap />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
         </Routes>
