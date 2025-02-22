@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hero from "./components/HomePage/Hero";
+import Practice from "./components/CodeEditor/Practice";
+import { Routes, Route } from "react-router-dom";
+import "./index.css";
+import RoadMap from "./components/RoadMap/RoadMap";
+import Navbar from "./components/Navbar/Navbar";
+import ViewProfile from "./components/Navbar/ViewProfile";
+import HomePage from "./components/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className=" min-h-screen inset-0  bg-slate-50 dark:bg-[#0B1120]">
+      <div
+          className="absolute bg-grid-slate-900/[0.04] bg-[bottom_1px_center] dark:bg-grid-slate-400/[0.05] dark:bg-bottom dark:border-b dark:border-slate-100/5"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent, black)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent, black)",
+          }}
+        ></div> 
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/practice/twosum" element={<Practice />} />{" "}
+          <Route path="/roadmap" element={<RoadMap />} />
+          <Route path="/viewprofile" element={<ViewProfile />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
