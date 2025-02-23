@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import Enum
-from typing import List
-from pydantic import BaseModel
+from typing import List, Optional
+from pydantic import BaseModel, EmailStr
 
 
 class Question(BaseModel):
@@ -44,3 +44,23 @@ class Topics(Enum):
     intervals = "Intervals"
     math = "Math"
     bit = "Bit Manipulation"
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    id: Optional[int] = None
+
+
+class UserRegister(BaseModel):
+    name: str
+    email: EmailStr
+    password: str
+
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
