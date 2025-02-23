@@ -26,7 +26,7 @@ def root():
 def test_db(db: Database = Depends(get_db)):
     try:
         # Try accessing a collection (change 'test_collection' as needed)
-        collection = db["test_collection"]
+        collection = db["questions"]
         document_count = collection.count_documents({})
         return {"status": "success", "document_count": document_count}
     except Exception as e:
