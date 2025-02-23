@@ -1,3 +1,7 @@
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
 prerequisite_graph = {
     "array": [],
     "hashing": ["array"],
@@ -32,3 +36,11 @@ def get_topic_prerequisites(topic: str, prereqs: list = []) -> list:
             get_topic_prerequisites(pre, prereqs)
 
     return prereqs
+
+
+def hash(password: str):
+    return pwd_context.hash(password)
+
+
+def verify(plain_password: str, hashed_password: str):
+    return pwd_context.verify(plain_password, hashed_password)

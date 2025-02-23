@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pymongo.database import Database
 
 from app.database import get_db
-from app.routers import owlie, question, roadmap
+from app.routers import owlie, question, roadmap, auth
 
 ORIGINS = ["*"]
 app = FastAPI()
@@ -15,15 +15,16 @@ app.add_middleware(
 app.include_router(roadmap.router)
 app.include_router(owlie.router)
 app.include_router(question.router)
+app.include_router(auth.router)
 
 
 @app.get("/")
-def root():
+async def root():
     return {"message": "root route is working"}
 
 
 @app.get("/test-db")
-def test_db(db: Database = Depends(get_db)):
+async def test_db(db: Database = Depends(get_db)):
     try:
         # Try accessing a collection (change 'test_collection' as needed)
         collection = db["questions"]
