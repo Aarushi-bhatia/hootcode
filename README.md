@@ -127,7 +127,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🌐 Links
 
 - [Website](https://hootcode.vercel.app)
-- [Documentation](https://github.com/Aarushi-bhatia/hootcode/wiki)
 - [Report Bug](https://github.com/Aarushi-bhatia/hootcode/issues)
 - [Request Feature](https://github.com/Aarushi-bhatia/hootcode/issues)
 
