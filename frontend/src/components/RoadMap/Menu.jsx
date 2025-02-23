@@ -49,20 +49,8 @@ const Menu = () => {
           </div>
         ))}
       </div>
-      <div className="rounded-lg text-center shadow-lg text-slate-300 p-4 font-semibold bg-[#0B1120] w-52 h-36 mr-auto ml-auto m-5">
-        <h1 className="text-base">Badges</h1>
-        {badges.length > 0 ? (
-          <div className="mt-4">
-            {badges.map((badge, index) => (
-              <div key={index} className="text-slate-400">
-                {badge}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <h3 className="text-slate-400  mt-4">No Badges</h3>
-        )}
-      </div>
+      
+        
     </div>
   );
 };

@@ -4,6 +4,8 @@ import Owlie from "../Owlie/Owlie";
 const Problem = () => {
   const [activeTab, setActiveTab] = useState("Problem");
   const [questionData, setQuestionData] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupType, setPopupType] = useState("");
   const questionId = "2";
 
   const tabs = ["Problem", "Owlie's Help"];
@@ -11,10 +13,11 @@ const Problem = () => {
   useEffect(() => {
     import("../../data/questions.json")
       .then((module) => {
-        setQuestionData(module.default[questionId]); // Access `module.default`
+        setQuestionData(module.default[questionId]);
       })
       .catch((err) => console.error("Failed to load questions:", err));
-  }, [questionId]);  
+  }, [questionId]);
+  
 
   const renderContent = () => {
     if (!questionData.title) {
