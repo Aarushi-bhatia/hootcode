@@ -9,7 +9,7 @@ const Hero = () => {
     <div className='flex gap-6 relative '>
       <div>
       <h1 className='text-slate-900 z-auto font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight  dark:text-white'>Code smarter, not harder with AI by your side.</h1>
-    <p className='mt-6 text-lg text-slate-600 max-w-3xl mx-auto dark:text-slate-400'>A dynamic platform offering AI guidance, Code Review, and tailored learning paths—revolutionizing how you master coding with confidence.</p>
+    <p className='mt-6 text-lg text-slate-600 max-w-3xl mx-auto dark:text-slate-400'>A dynamic platform offering AI guidance, Code Review, and interactive learning path—revolutionizing how you master coding with confidence.</p>
 
       </div>
       <img src="/codelaptop.png" className='h-80 w-auto shadow-2xl' alt="" />
